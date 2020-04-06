@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,10 +44,8 @@ namespace MortgageCalculator {
             else if (creditScore >= 500)
                 intRate += 1.75;
             else {
-                System.Console.WriteLine("Ain't nobody giving you a loan!");
-                System.Console.WriteLine("Have a nice day!");
-                //leave the program here exit? break?
-                ;
+                MessageBox.Show("Ain't nobody giving you a loan!", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return -999;//
             }
 
             //this is where figure out the interest rate
@@ -61,26 +59,70 @@ namespace MortgageCalculator {
         }
 
         private void btnCalculate_Click(object sender, EventArgs e) {
+            /*
+             * Ensure that only the most relevant error indicators are visible
+             */
+            lblRateErr.Visible = false;
+            lblScoreErr.Visible = false;
+            lblValueErr.Visible = false;
+            lblIncomeErr.Visible = false;
+
             String creditScore = tbxScore.Text;
             int trueScore = 0;
             try {
-                trueScore = int.Parse(creditScore);
+                trueScore = int.Parse(creditScore);//TODO: check for negative
             } catch (Exception) {
-                return;//Error? Stop. immediately.
+                lblScoreErr.Visible = true;
+                MessageBox.Show("Please enter a valid credit score", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             //If the AR radio button is NOT checked, then the rate is fixed rate
             Boolean fixedRate = !rbtnAR.Checked;
+            string rateType = (fixedRate) ? "fixed" : "adjustible";
+            lblInterestInfo.Text = "Interest Rate (" + rateType + ")";
 
             String extraRate = tbxRate.Text;
             double trueRate = 0;
             try {
-                trueRate = double.Parse(extraRate);
+                trueRate = double.Parse(extraRate);//TODO: check for negative
             } catch (Exception) {
+                lblRateErr.Visible = true;
+                MessageBox.Show("Please enter a valid interest rate", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             double interestRateFinal = InterestRateCalc(trueScore, trueRate, fixedRate, FEDRATE);
-            notConsole.Text = interestRateFinal + "%";
+            if (interestRateFinal < 0) {
+                //No negative interest rate allowed.
+                return;
+            }
+            lblInterest.Text = string.Format("{0:0}%", interestRateFinal);
+
+            //Switch to the calculation tab
+            tabControl.SelectedTab = tpgCalc;
+        }
+
+        private void btnReroll_Click(object sender, EventArgs e) {
+            //Clear values out of the textboxes
+            tbxIncome.Text = "";
+            tbxRate.Text = "";
+            tbxScore.Text = "";
+            tbxValue.Text = "";
+
+            //Switch back to the data tab
+            tabControl.SelectedTab = tpgData;
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void pnlMonth_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void pnlRate_Paint(object sender, PaintEventArgs e) {
+
         }
     }
 }
