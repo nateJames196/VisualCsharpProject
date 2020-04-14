@@ -1,0 +1,35 @@
+using System;
+
+namespace PaymentCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           //this is to test it
+           //System.Console.WriteLine( MonthlyPayment(3.9, 300000, 30));
+
+            //in this program I wil take the amount of the loan and the final interest rate to figure out the 
+            //monthly loan payments and total value of the loan
+            //the formula = principle * monthly interest/(1 - (1/(1 + monthly interest))^ number of monthly payments
+            static double MonthlyPayment(double interestRateFinal, double amtOfLoan, int lengthOfLoan)
+            {
+                int monthsOfLoan = lengthOfLoan * 12;
+                double interestRate = interestRateFinal / 1200;
+
+                
+                double moPayment = amtOfLoan * interestRate / (1 - (Math.Pow(1/(1+interestRate), monthsOfLoan)));
+                
+                //to figure out the total cost of the loan, just multiply the payments by the months of the loan
+                double totalValueOfLoan = moPayment * monthsOfLoan;
+                
+                //for testing:
+                //System.Console.WriteLine(totalValueOfLoan);
+                return moPayment;
+
+            }
+
+
+        }
+    }
+}
