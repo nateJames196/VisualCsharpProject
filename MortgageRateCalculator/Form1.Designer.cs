@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpgData = new System.Windows.Forms.TabPage();
@@ -361,6 +362,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Crimson;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(7, 16);
             this.panel2.Name = "panel2";
@@ -370,6 +373,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Crimson;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Location = new System.Drawing.Point(587, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 387);
@@ -559,6 +564,8 @@
             // sideblock2
             // 
             this.sideblock2.BackColor = System.Drawing.Color.Crimson;
+            this.sideblock2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sideblock2.BackgroundImage")));
+            this.sideblock2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.sideblock2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.sideblock2.Location = new System.Drawing.Point(586, 16);
             this.sideblock2.Name = "sideblock2";
@@ -568,6 +575,8 @@
             // sideblock1
             // 
             this.sideblock1.BackColor = System.Drawing.Color.Crimson;
+            this.sideblock1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sideblock1.BackgroundImage")));
+            this.sideblock1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.sideblock1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.sideblock1.Location = new System.Drawing.Point(6, 16);
             this.sideblock1.Name = "sideblock1";
