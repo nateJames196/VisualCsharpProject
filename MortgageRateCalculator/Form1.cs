@@ -19,13 +19,17 @@ namespace MortgageRateCalculator {
 
         //in this program I wil take the amount of the loan and the final interest rate to figure out the 
         //monthly loan payments and total value of the loan
-        //the formula = principle * (rate/12) * (1 + rate) ^ number of monthly payments/(1 + rate)^ number of monthly payments - 1
+        //the formula = principle * monthly interest/(1 - (1/(1 + monthly interest))^ number of monthly payments
         static double MonthlyPayment(double interestRateFinal, double amtOfLoan, int lengthOfLoan) {
-            int monthsOfLoan = lengthOfLoan * 12;
+        int monthsOfLoan = lengthOfLoan * 12;
+            double interestRate = interestRateFinal / 1200;
 
-            double moPayment = (amtOfLoan * (interestRateFinal / 12) * Math.Pow(interestRateFinal + 1, monthsOfLoan)) / Math.Pow(interestRateFinal + 1, monthsOfLoan - 1);
+
+            double moPayment = amtOfLoan * interestRate / (1 - (Math.Pow(1 / (1 + interestRate), monthsOfLoan)));
+
+            //for testing:
+            //System.Console.WriteLine(totalValueOfLoan);
             return moPayment;
-
         }
 
         static double InterestRateCalc(int credit, double rate, bool fixedRate, double fedRate) {
@@ -79,6 +83,7 @@ namespace MortgageRateCalculator {
             lblValueErr.Visible = false;
             lblIncomeErr.Visible = false;
 
+            //BEGIN VALIDATION
             String creditScore = tbxScore.Text;
             int trueScore;
             try {
@@ -117,6 +122,10 @@ namespace MortgageRateCalculator {
                 return;
             }
 
+            //TODO: feed data into UserInformation class
+
+            //Data validation is done, now lets use our data to calculate
+
             //Calculate actual loan interest
             double interestRateFinal = InterestRateCalc(trueScore, trueRate, fixedRate, FEDRATE);
             if (interestRateFinal < 0) {
@@ -134,11 +143,12 @@ namespace MortgageRateCalculator {
              * Since interest causes the loan value to change every month, we can only find the
              * total cost of the loan by adding all the monthly payments together 
              */
-            double totalLoanValue = loanMonthlyPayment * loanDuration;
+            double totalLoanValue = loanMonthlyPayment * loanDuration * 12;
             lblCost.Text = string.Format("${0:0}", totalLoanValue);
 
+            //TODO: update UserInformation class with calculated info
 
-            //Switch to the calculation tab
+            //Calculations are done. Switch to the calculation tab
             tabControl.SelectedTab = tpgCalc;
         }
 

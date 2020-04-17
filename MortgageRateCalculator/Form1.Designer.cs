@@ -149,7 +149,7 @@
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(164, 19);
+            this.btnCalculate.Location = new System.Drawing.Point(172, 19);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(75, 33);
             this.btnCalculate.TabIndex = 19;
@@ -162,12 +162,12 @@
             this.rbtnFR.AutoSize = true;
             this.rbtnFR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbtnFR.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.rbtnFR.Location = new System.Drawing.Point(56, 42);
+            this.rbtnFR.Location = new System.Drawing.Point(40, 42);
             this.rbtnFR.Name = "rbtnFR";
-            this.rbtnFR.Size = new System.Drawing.Size(61, 17);
+            this.rbtnFR.Size = new System.Drawing.Size(97, 17);
             this.rbtnFR.TabIndex = 14;
             this.rbtnFR.TabStop = true;
-            this.rbtnFR.Text = "FR loan";
+            this.rbtnFR.Text = "Fixed rate loan";
             this.rbtnFR.UseVisualStyleBackColor = true;
             // 
             // rbtnAR
@@ -176,12 +176,12 @@
             this.rbtnAR.Checked = true;
             this.rbtnAR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbtnAR.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.rbtnAR.Location = new System.Drawing.Point(56, 19);
+            this.rbtnAR.Location = new System.Drawing.Point(40, 19);
             this.rbtnAR.Name = "rbtnAR";
-            this.rbtnAR.Size = new System.Drawing.Size(62, 17);
+            this.rbtnAR.Size = new System.Drawing.Size(118, 17);
             this.rbtnAR.TabIndex = 15;
             this.rbtnAR.TabStop = true;
-            this.rbtnAR.Text = "AR loan";
+            this.rbtnAR.Text = "Adjustible rate loan";
             this.rbtnAR.UseVisualStyleBackColor = true;
             // 
             // panel4
