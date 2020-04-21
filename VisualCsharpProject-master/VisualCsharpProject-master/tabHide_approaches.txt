@@ -1,0 +1,14 @@
+To hide tabs;event listener approach:
+- Store an integer value representing the currently selected tab.
+- Add an eventlistener for the TabIndexChanged event
+- When the event is triggered, change the currently selected tab back to the stored integer value
+- Whenever the tab is MEANT to change, change the stored integer value with it
+- May cause an ugly *blink* to occur
+
+
+To hide tabs;Removal approach:
+- Make sure all tabPages are stored in variables
+- Get the collection of tabPages inside the tabControl, using tabControl.TabPages
+- Call the "Remove" method on the collection, using the page you want to "hide" as the argument.
+- This hides the tab. To show the tab again, grab the collection of tab pages in tabControl again (tabControl.tabPages)
+- Add the new page using the the "Add" method on the collection, using the page you want to "show" as an argument.

@@ -1,0 +1,18 @@
+C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csprojAssemblyReference.cache
+C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Properties.Resources.resources
+C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csproj.GenerateResource.cache
+C:\Users\MG\source\repos\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.exe.config
+C:\Users\MG\source\repos\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.exe
+C:\Users\MG\source\repos\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.pdb
+C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.exe
+C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.pdb
+C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Form1.resources
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.exe.config
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.exe
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.pdb
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csprojAssemblyReference.cache
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Form1.resources
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Properties.Resources.resources
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csproj.GenerateResource.cache
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.exe
+C:\Broward Classes\C#cop2360\Projects\VisualCsharpProject-master\VisualCsharpProject-master\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.pdb
