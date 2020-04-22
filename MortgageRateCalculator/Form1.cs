@@ -148,6 +148,7 @@ namespace MortgageRateCalculator {
             }
 
             //TODO: feed data into UserInformation class
+           
 
             //Data validation is done, now lets use our data to calculate
 
@@ -172,6 +173,8 @@ namespace MortgageRateCalculator {
             lblCost.Text = string.Format("${0:0}", totalLoanValue);
 
             //TODO: update UserInformation class with calculated info
+            UserInformation info = new UserInformation(trueScore, totalLoanValue, loanDuration, tbxIncome.Text);
+            MortgageCalculation databaseQ = new MortgageCalculation(info);
 
             //Calculations are done. Switch to the calculation tab
             tabControl.TabPages.Add(tpgCalc);//Allows us to change to the calculations tab

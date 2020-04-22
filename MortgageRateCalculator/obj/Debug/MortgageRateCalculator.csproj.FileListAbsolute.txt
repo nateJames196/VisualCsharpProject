@@ -7,3 +7,30 @@ C:\Users\MG\source\repos\MortgageRateCalculator\bin\Debug\MortgageRateCalculator
 C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.exe
 C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.pdb
 C:\Users\MG\source\repos\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Form1.resources
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csprojAssemblyReference.cache
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Form1.resources
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.Properties.Resources.resources
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csproj.GenerateResource.cache
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.exe
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.pdb
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.exe.config
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.exe
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\MortgageRateCalculator.pdb
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\BouncyCastle.Crypto.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\Google.Protobuf.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\MySql.Data.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\Renci.SshNet.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Buffers.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Memory.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Numerics.Vectors.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\Ubiety.Dns.Core.dll
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\Google.Protobuf.pdb
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\Google.Protobuf.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\MySql.Data.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\Renci.SshNet.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Buffers.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Memory.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Numerics.Vectors.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\GitHub Repos\VisualCsharpProject\MortgageRateCalculator\obj\Debug\MortgageRateCalculator.csproj.CopyComplete
