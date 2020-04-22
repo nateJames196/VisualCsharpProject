@@ -15,6 +15,8 @@ namespace MortgageRateCalculator {
 
         public Form1() {
             InitializeComponent();
+            TabPage tCalc = tpgCalc;
+            tabControl.TabPages.Remove(tCalc);
         }
 
         //in this program I wil take the amount of the loan and the final interest rate to figure out the 
@@ -172,9 +174,12 @@ namespace MortgageRateCalculator {
             //TODO: update UserInformation class with calculated info
 
             //Calculations are done. Switch to the calculation tab
+            tabControl.TabPages.Add(tpgCalc);//Allows us to change to the calculations tab
             tabControl.SelectedTab = tpgCalc;
+            tabControl.TabPages.Remove(tpgData);//Hides the data tab
         }
 
+        //Returns to the data tab after clearing out the data
         private void btnReroll_Click(object sender, EventArgs e) {
             //Clear values out of the textboxes
             tbxIncome.Text = "";
@@ -183,11 +188,23 @@ namespace MortgageRateCalculator {
             tbxValue.Text = "";
 
             //Switch back to the data tab
+            tabControl.TabPages.Add(tpgData);//Alows us to change to the data tab
             tabControl.SelectedTab = tpgData;
+            tabControl.TabPages.Remove(tpgCalc);//Hides the calculations tab
         }
 
         private void btnQuit_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        //Returns to the data tab, but doesn't clear the data out first
+        private void btnRetry_Click(object sender, EventArgs e) {
+            //Switch back to the data tab
+            tabControl.TabPages.Add(tpgData);//Alows us to change to the data tab
+            tabControl.SelectedTab = tpgData;
+            tabControl.TabPages.Remove(tpgCalc);//Hides the calculations tab
+
+            //Ideally this would also update the db, but it doesn't need to.
         }
     }
 

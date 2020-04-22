@@ -68,6 +68,7 @@
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.sideblock2 = new System.Windows.Forms.Panel();
             this.sideblock1 = new System.Windows.Forms.Panel();
+            this.btnRetry = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpgData.SuspendLayout();
@@ -407,6 +408,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel8.Controls.Add(this.btnRetry);
             this.panel8.Controls.Add(this.btnReroll);
             this.panel8.Controls.Add(this.btnQuit);
             this.panel8.Location = new System.Drawing.Point(25, 273);
@@ -422,11 +424,11 @@
             this.btnReroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReroll.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnReroll.ForeColor = System.Drawing.Color.White;
-            this.btnReroll.Location = new System.Drawing.Point(66, 18);
+            this.btnReroll.Location = new System.Drawing.Point(12, 18);
             this.btnReroll.Name = "btnReroll";
-            this.btnReroll.Size = new System.Drawing.Size(118, 28);
+            this.btnReroll.Size = new System.Drawing.Size(80, 28);
             this.btnReroll.TabIndex = 12;
-            this.btnReroll.Text = "Calculate Again";
+            this.btnReroll.Text = "Start over";
             this.btnReroll.UseVisualStyleBackColor = false;
             this.btnReroll.Click += new System.EventHandler(this.btnReroll_Click);
             // 
@@ -438,7 +440,7 @@
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(196, 18);
+            this.btnQuit.Location = new System.Drawing.Point(231, 18);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 28);
             this.btnQuit.TabIndex = 11;
@@ -583,6 +585,22 @@
             this.sideblock1.Size = new System.Drawing.Size(184, 387);
             this.sideblock1.TabIndex = 18;
             // 
+            // btnRetry
+            // 
+            this.btnRetry.BackColor = System.Drawing.Color.Red;
+            this.btnRetry.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.btnRetry.FlatAppearance.BorderSize = 3;
+            this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetry.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnRetry.ForeColor = System.Drawing.Color.White;
+            this.btnRetry.Location = new System.Drawing.Point(98, 18);
+            this.btnRetry.Name = "btnRetry";
+            this.btnRetry.Size = new System.Drawing.Size(113, 28);
+            this.btnRetry.TabIndex = 13;
+            this.btnRetry.Text = "Calculate again";
+            this.btnRetry.UseVisualStyleBackColor = false;
+            this.btnRetry.Click += new System.EventHandler(this.btnRetry_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,6 +679,7 @@
         private System.Windows.Forms.Label lblIncomeErr;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnRetry;
     }
 
 }
