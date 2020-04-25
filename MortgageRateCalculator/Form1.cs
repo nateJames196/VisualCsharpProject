@@ -91,11 +91,13 @@ namespace MortgageRateCalculator {
                 trueScore = int.Parse(creditScore);//TODO: check for negative
 
                 if (trueScore < 500) {
+                    lblScoreErr.Visible = true;
                     MessageBox.Show("Your credit score is too low for a loan.", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (trueScore > 850) {
+                    lblScoreErr.Visible = true;
                     MessageBox.Show("Please enter a real credit score", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -104,6 +106,7 @@ namespace MortgageRateCalculator {
                 MessageBox.Show("Please enter a valid credit score", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            
             //If the AR radio button is NOT checked, then the rate is fixed rate
             Boolean fixedRate = !rbtnAR.Checked;
             string rateType = (fixedRate) ? "fixed" : "adjustible";
@@ -114,11 +117,13 @@ namespace MortgageRateCalculator {
             try {
                 trueRate = double.Parse(extraRate);//TODO: check for negative
                 if (trueRate <= 0) {
+                    lblRateErr.Visible = true;
                     MessageBox.Show("The interest rate must be positive.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (trueRate >= 100) {
+                    lblRateErr.Visible = true;
                     MessageBox.Show("Please enter a smaller interest rate.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -127,7 +132,7 @@ namespace MortgageRateCalculator {
                 MessageBox.Show("Please enter a valid interest rate", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            
             string loanValue = tbxValue.Text;
             double trueValue;
             try {
@@ -138,11 +143,12 @@ namespace MortgageRateCalculator {
                 }
 
                 if (trueValue < 1000) {
+                    lblValueErr.Visible = true;
                     MessageBox.Show("Your loan value is too small. Please enter a higher loan.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             } catch (Exception) {
-                lblRateErr.Visible = true;
+                lblValueErr.Visible = true;
                 MessageBox.Show("Please enter a valid value for your loan.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
