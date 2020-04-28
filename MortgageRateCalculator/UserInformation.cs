@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// File:    UserInformation.cs
+// Project: COP2360C Group Project
+// Author:  Nelson Brumaire
+// History: Version 1.0 April 29, 2020
 namespace MortgageRateCalculator {
     class UserInformation {
         public string address { get; set; }

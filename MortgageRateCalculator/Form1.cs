@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// File:    Form1.cs
+// Project: COP2360C Group Project
+// Author:  Nelson Brumaire, Nathan James, Karl Meyer
+// History: Version 1.0 April 29, 2020
 namespace MortgageRateCalculator {
     public partial class Form1 : Form {
         //Static federal interest rate
@@ -19,34 +23,32 @@ namespace MortgageRateCalculator {
             tabControl.TabPages.Remove(tCalc);
         }
 
-        //in this program I wil take the amount of the loan and the final interest rate to figure out the 
-        //monthly loan payments and total value of the loan
-        //the formula = principle * monthly interest/(1 - (1/(1 + monthly interest))^ number of monthly payments
+        /**
+         * This part of the program takes the amount of the loan and the final interest rate to figure out the 
+         * monthly loan payments and total value of the loan
+         */
         static double MonthlyPayment(double interestRateFinal, double amtOfLoan, int lengthOfLoan) {
-        int monthsOfLoan = lengthOfLoan * 12;
+            int monthsOfLoan = lengthOfLoan * 12;
+            //this makes the code more readable, interest rate/12 for months and 100 to account for the percentage
             double interestRate = interestRateFinal / 1200;
 
 
             double moPayment = amtOfLoan * interestRate / (1 - (Math.Pow(1 / (1 + interestRate), monthsOfLoan)));
 
-            //for testing:
-            //System.Console.WriteLine(totalValueOfLoan);
             return moPayment;
         }
 
+        /**
+         * This function calculates the interest rate, based on credit score, fed rate, and additional 
+         * interest provided by the user
+         */
         static double InterestRateCalc(int credit, double rate, bool fixedRate, double fedRate) {
-            //this is how I think we will figure out the interest rates
-            //a bunch of if, elseif statements where if credit is higher than 800 we increment
-            //intRate by .25, if 750 we increment by .50,(these numbers can change) and so on until if they are below 500
-            //we tell them no one is going to lend them crap
-            //then we add the fedRate to the intRate and add 2% or more for fixed
-            //and add 1.5% for adjustable
             int creditScore = credit;
             double intRate = rate;
             double fedInterestRate = fedRate;
             bool isFixedRate = fixedRate;
 
-            //these are the if/elseif statments
+            //Credit scores are separated into brackets, increasing the interest by 0.25 for every 50 points below 800
             if (creditScore >= 800)
                 intRate += .25;
             else if (creditScore >= 750)
@@ -61,11 +63,11 @@ namespace MortgageRateCalculator {
                 intRate += 1.5;
             else if (creditScore >= 500)
                 intRate += 1.75;
-            else {
+            else {//If the user's score is below 500, we tell them they probably won't be able to get a loan
                 return -999;
             }
 
-            //this is where figure out the interest rate
+            //Now that we have the influence from the credit score, we have what we need to find the final rate.
             if (isFixedRate) {
                 intRate = 2.0 + intRate + fedInterestRate;
                 return intRate;
@@ -85,82 +87,99 @@ namespace MortgageRateCalculator {
             lblIncomeErr.Visible = false;
 
             //BEGIN VALIDATION
+
+            //Validate credit score
             String creditScore = tbxScore.Text;
             int trueScore;
             try {
-                trueScore = int.Parse(creditScore);//TODO: check for negative
+                trueScore = int.Parse(creditScore);
 
+                //Score must be 500 or MORE.
                 if (trueScore < 500) {
                     lblScoreErr.Visible = true;
-                    MessageBox.Show("Your credit score is too low for a loan.", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Your credit score is too low for a loan.", "Unusable credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
+                //Credit scores don't exceed 850
                 if (trueScore > 850) {
                     lblScoreErr.Visible = true;
                     MessageBox.Show("Please enter a real credit score", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             } catch (Exception) {
+                //Did the user enter an integer?
                 lblScoreErr.Visible = true;
                 MessageBox.Show("Please enter a valid credit score", "Invalid credit score", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-            //If the AR radio button is NOT checked, then the rate is fixed rate
+
+            //Validate rate type; If AR radio button isn't checked, then the rate is fixed.
             Boolean fixedRate = !rbtnAR.Checked;
             string rateType = (fixedRate) ? "fixed" : "adjustible";
-            lblInterestInfo.Text = "Interest Rate (" + rateType + ")";
-
+            
+            //Validate interest rate
             String extraRate = tbxRate.Text;
             double trueRate;
             try {
-                trueRate = double.Parse(extraRate);//TODO: check for negative
-                if (trueRate <= 0) {
+                trueRate = double.Parse(extraRate);
+
+                //Interest rate cannot be lower than zero
+                if (trueRate < 0) {
                     lblRateErr.Visible = true;
                     MessageBox.Show("The interest rate must be positive.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
+                //Interest rate cannot be higher than 100(really it shouldn't even be higher than 10)
                 if (trueRate >= 100) {
                     lblRateErr.Visible = true;
                     MessageBox.Show("Please enter a smaller interest rate.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
             } catch (Exception) {
+                //Did the user enter a valid double?
                 lblRateErr.Visible = true;
                 MessageBox.Show("Please enter a valid interest rate", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
+            //Validate loan value
             string loanValue = tbxValue.Text;
             double trueValue;
             try {
+
+                //User can enter the value in two formats, numbers only or numbers with a dollar sign.
                 if (loanValue.StartsWith("$")) {
+                    //In this case, we only parse the part beyond the dollar sign.
                     trueValue = double.Parse(loanValue.Substring(1));
                 } else {
                     trueValue = double.Parse(loanValue);
                 }
 
+                //The loan needs to be at least 1000 dollars.
                 if (trueValue < 1000) {
                     lblValueErr.Visible = true;
                     MessageBox.Show("Your loan value is too small. Please enter a higher loan.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             } catch (Exception) {
+                //Loan needs to resolve as a number.
                 lblValueErr.Visible = true;
                 MessageBox.Show("Please enter a valid value for your loan.", "Invalid interest rate", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //TODO: feed data into UserInformation class
+            //BEGIN VALIDATION
 
-            //Data validation is done, now lets use our data to calculate
+            //Update interest rate info label
+            lblInterestInfo.Text = "Interest Rate (" + rateType + ")";
 
             //Calculate actual loan interest
             double interestRateFinal = InterestRateCalc(trueScore, trueRate, fixedRate, FEDRATE);
             if (interestRateFinal < 0) {
-                //No negative interest rate allowed.
+                //Just in case the user has a negative interest rate. Shouldn't happen.
                 return;
             }
             lblInterest.Text = string.Format("{0:0}%", interestRateFinal);
@@ -171,8 +190,9 @@ namespace MortgageRateCalculator {
             lblPayment.Text = string.Format("${0:0}", loanMonthlyPayment);
 
             /*
-             * Since interest causes the loan value to change every month, we can only find the
-             * total cost of the loan by adding all the monthly payments together 
+             * Since interest causes the loan value to change every month, we can 
+             * only find the total cost of the loan by adding all the monthly 
+             * payments together 
              */
             double totalLoanValue = loanMonthlyPayment * loanDuration * 12;
             lblCost.Text = string.Format("${0:0}", totalLoanValue);
@@ -199,6 +219,7 @@ namespace MortgageRateCalculator {
             tabControl.TabPages.Remove(tpgCalc);//Hides the calculations tab
         }
 
+        //Exits the application.
         private void btnQuit_Click(object sender, EventArgs e) {
             this.Close();
         }
@@ -209,8 +230,6 @@ namespace MortgageRateCalculator {
             tabControl.TabPages.Add(tpgData);//Alows us to change to the data tab
             tabControl.SelectedTab = tpgData;
             tabControl.TabPages.Remove(tpgCalc);//Hides the calculations tab
-
-            //Ideally this would also update the db, but it doesn't need to.
         }
     }
 

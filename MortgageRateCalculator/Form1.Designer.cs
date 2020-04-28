@@ -1,4 +1,8 @@
-﻿namespace MortgageRateCalculator {
+﻿// File:    Form1.Designer.cs
+// Project: COP2360C Group Project
+// Author:  Nathan James, Karl Meyer
+// History: Version 1.0 April 29, 2020
+namespace MortgageRateCalculator {
     partial class Form1 {
         /// <summary>
         /// Required designer variable.
@@ -53,6 +57,7 @@
             this.tpgCalc = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnRetry = new System.Windows.Forms.Button();
             this.btnReroll = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -68,7 +73,6 @@
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.sideblock2 = new System.Windows.Forms.Panel();
             this.sideblock1 = new System.Windows.Forms.Panel();
-            this.btnRetry = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpgData.SuspendLayout();
@@ -416,6 +420,22 @@
             this.panel8.Size = new System.Drawing.Size(332, 66);
             this.panel8.TabIndex = 13;
             // 
+            // btnRetry
+            // 
+            this.btnRetry.BackColor = System.Drawing.Color.Red;
+            this.btnRetry.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.btnRetry.FlatAppearance.BorderSize = 3;
+            this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetry.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnRetry.ForeColor = System.Drawing.Color.White;
+            this.btnRetry.Location = new System.Drawing.Point(98, 18);
+            this.btnRetry.Name = "btnRetry";
+            this.btnRetry.Size = new System.Drawing.Size(113, 28);
+            this.btnRetry.TabIndex = 13;
+            this.btnRetry.Text = "Calculate again";
+            this.btnRetry.UseVisualStyleBackColor = false;
+            this.btnRetry.Click += new System.EventHandler(this.btnRetry_Click);
+            // 
             // btnReroll
             // 
             this.btnReroll.BackColor = System.Drawing.Color.Red;
@@ -584,22 +604,6 @@
             this.sideblock1.Name = "sideblock1";
             this.sideblock1.Size = new System.Drawing.Size(184, 387);
             this.sideblock1.TabIndex = 18;
-            // 
-            // btnRetry
-            // 
-            this.btnRetry.BackColor = System.Drawing.Color.Red;
-            this.btnRetry.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
-            this.btnRetry.FlatAppearance.BorderSize = 3;
-            this.btnRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRetry.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnRetry.ForeColor = System.Drawing.Color.White;
-            this.btnRetry.Location = new System.Drawing.Point(98, 18);
-            this.btnRetry.Name = "btnRetry";
-            this.btnRetry.Size = new System.Drawing.Size(113, 28);
-            this.btnRetry.TabIndex = 13;
-            this.btnRetry.Text = "Calculate again";
-            this.btnRetry.UseVisualStyleBackColor = false;
-            this.btnRetry.Click += new System.EventHandler(this.btnRetry_Click);
             // 
             // Form1
             // 

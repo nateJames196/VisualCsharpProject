@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
+// File:    MortgageCalculation.cs
+// Project: COP2360C Group Project
+// Author:  Nelson Brumaire
+// History: Version 1.0 April 29, 2020
 namespace MortgageRateCalculator {
     class MortgageCalculation {
         public UserInformation userInfo { get; set; }
